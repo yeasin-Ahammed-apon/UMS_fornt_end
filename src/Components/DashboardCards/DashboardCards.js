@@ -52,8 +52,7 @@ const DashboardCards = () => {
       icon: "bi bi-currency-dollar",
     },
   ];
-  let [CardData, SetCardData] = useState(data);
-  SetCardData(data);
+  let [CardData, SetCardData] = useState(data);  
   return (
     <div className="dashboard_cards">
       <div className="row_for_parent">

@@ -53,6 +53,7 @@ const DashboardCards = () => {
     },
   ];
   let [CardData, SetCardData] = useState(data);
+  SetCardData(data);
   return (
     <div className="dashboard_cards">
       <div className="row_for_parent">

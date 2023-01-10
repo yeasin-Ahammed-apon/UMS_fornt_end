@@ -1,0 +1,12 @@
+* {
+    padding: 0%;
+    margin: 0%;
+  }
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+  .pages{
+    padding: 10px;
+    background-color: rgb(65, 65, 65);
+  }
+  

@@ -1,0 +1,34 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+.pages{
+  padding: 10px;
+  background-color: rgb(65, 65, 65);
+}
+.second_list{
+  padding: 0;    
+}
+.second_list_square:hover{   
+  background-color: rgb(255, 135, 135);
+  box-shadow: -4px -3px 15px 11px rgba(0, 0, 0, 0.171);
+}
+.second_list_printer:hover{  
+  background-color: rgb(166, 248, 128);
+  box-shadow: -4px -3px 15px 11px rgba(0, 0, 0, 0.171);
+}
+.second_list_fullscreen:hover{  
+  background-color: rgb(138, 128, 233);
+  box-shadow: -4px -3px 15px 11px rgba(0, 0, 0, 0.171);
+}
+.second_list_clockwise:hover{  
+  background-color: rgb(224, 133, 209);
+  box-shadow: -4px -3px 15px 11px rgba(0, 0, 0, 0.171);
+}
+.second_list_expand:hover{  
+  background-color: rgb(225, 238, 109);
+  box-shadow: -4px -3px 15px 11px rgba(0, 0, 0, 0.171);
+}

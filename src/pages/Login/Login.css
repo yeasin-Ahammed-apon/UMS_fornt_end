@@ -1,0 +1,18 @@
+
+
+.login_form_color{
+    background-color: rgb(205, 226, 255);
+}
+.login_form_image{    
+    margin: 0 auto;
+    display: block;    
+}
+.login_form_forget_password{    
+    text-align: center;
+    display: block;
+    color: red;    
+}
+.login_form_login{
+    color: rgb(28, 27, 85);
+    font-weight: bolder;
+}

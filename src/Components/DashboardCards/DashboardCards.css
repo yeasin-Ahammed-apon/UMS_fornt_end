@@ -1,0 +1,64 @@
+
+.row_for_parent{
+    margin: 0%;
+    padding: 0%;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.dashboard_cards{    
+    padding-left:2em ;
+    padding-right:2em ;
+}
+.row_for_child{
+    background-color: rgb(59, 59, 214);
+    display: grid;
+    grid-template-columns: auto auto;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgba(226, 226, 226, 0.904);
+    font-size: 20px;
+    font-weight: bold; 
+    box-shadow: 0 8px 17px 0 rgba(7, 7, 7, 0.26), 0 6px 20px 0 rgba(145, 141, 141, 0.19);
+    transition: all .10s ease-in-out;
+       
+}
+.row_for_child:hover{
+    color: rgba(255, 255, 255, 0.904);
+    font-weight: bolder;        
+    box-shadow: 0 8px 17px 0 rgba(7, 7, 7, 0.726), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all .10s ease-in-out;
+}
+
+.dashboard_card_icon{
+    font-size: 3em;
+    text-align: center;
+    padding: 15px;
+    margin-right: 10px;
+    
+}
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .row_for_parent{        
+        grid-template-columns: auto auto auto;        
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .row_for_parent{        
+        grid-template-columns: auto;        
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .row_for_parent{        
+        grid-template-columns: auto;        
+    }
+}

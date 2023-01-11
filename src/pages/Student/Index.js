@@ -4,13 +4,14 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { ErrorBoundary } from "react-error-boundary";
 
-import SideBar from "../../Components/parts/Sidebar";
+import SideBar from "../../Components/SideBar/SideBar";
 import PageLoadingFail from "../../Components/parts/PageLoadingFail";
 import Navigationbar from "../../Components/parts/Navigationbar";
 import MetaTag from "../../Components/parts/MetaTag";
 import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
 import Dashboard from "./Dashboard/Dashboard";
+import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
 
 // lazy loading components go here
 const Profile = React.lazy(() => import("./Profile/Profile"));
@@ -63,6 +64,7 @@ const Index = () => {
             />
             <Route path="/*" element={<Error404 />} />
           </Routes>
+          <BottomNavBar />
         </div>
       </div>
     </div>

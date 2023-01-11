@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
-import "./Part.css";
+import "./SideBar.css";
 
 const SideBar = ({SideBarToggle}) => {
   let [sideBarOption, setSideBarOption] = useState([
@@ -75,7 +75,9 @@ const SideBar = ({SideBarToggle}) => {
   ]);
 
   return (
-    <Sidebar  style={{
+   <div className="SideBar">
+     <Sidebar
+     style={{
        height: "100vh" ,
        display: SideBarToggle ?'block':'none',       
        }} >
@@ -100,6 +102,7 @@ const SideBar = ({SideBarToggle}) => {
         </Menu>
       </Menu>
     </Sidebar>
+   </div>
   );
 };
 

@@ -14,11 +14,14 @@ const Navigationbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => collapseSidebar()}>
+            <Nav.Link
+              className="SideBarCollapseButton"
+              onClick={() => collapseSidebar()}
+            >
               <i className="bi bi-list fs-5"></i>
             </Nav.Link>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            {/* <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link> */}
           </Nav>
           <NavDropdown
             title={

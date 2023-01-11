@@ -1,0 +1,31 @@
+.option_design{
+    text-decoration: none;
+      color: inherit;
+}
+.option_design:hover{
+    text-decoration: none;
+      color: inherit;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+       
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .SideBar{
+        display: none;
+    }
+    .SideBarCollapseButton{
+        display: none;
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .SideBar{
+        display: none;
+    }
+    .SideBarCollapseButton{
+        display: none;
+    }    
+}

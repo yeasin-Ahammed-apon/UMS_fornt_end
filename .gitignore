@@ -9,7 +9,7 @@
 /coverage
 
 # production
-# /build
+# /build # netlify build process is making problem thats why this /build option is comment out
 
 # misc
 .DS_Store

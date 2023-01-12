@@ -12,7 +12,7 @@ import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
 import Dashboard from "./Dashboard/Dashboard";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
-import Changepassword from "./Changepassword/Changepassword";
+import ChangePassword from "./ChangePassword/ChangePassword";
 
 // lazy loading components go here
 const Profile = React.lazy(() => import("./Profile/Profile"));
@@ -91,7 +91,7 @@ const Index = () => {
                     }
                   >
                     <MetaTag MetaTagTitle="change_password" />
-                    <Changepassword></Changepassword>
+                    <ChangePassword></ChangePassword>
                   </Suspense>
                 </ErrorBoundary>
               }

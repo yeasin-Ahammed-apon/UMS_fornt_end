@@ -57,9 +57,8 @@ const DashboardCards = () => {
     <div className="dashboard_cards">
       <div className="row_for_parent">
         {CardData.map((cardInfo) => {
-          return (
-            <>
-              <a href="/" className="row_for_child  rounded">
+          return (            
+              <a href="/" key={cardInfo.name} className="row_for_child  rounded">
                 <div
                   className="rounded  dashboard_card_icon"
                   style={{
@@ -70,8 +69,7 @@ const DashboardCards = () => {
                   <i className={cardInfo.icon}></i>
                 </div>
                 <div className="">{cardInfo.name}</div>
-              </a>
-            </>
+              </a>            
           );
         })}
       </div>

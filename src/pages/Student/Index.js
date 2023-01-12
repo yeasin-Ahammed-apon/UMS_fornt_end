@@ -12,6 +12,7 @@ import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
 import Dashboard from "./Dashboard/Dashboard";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
+import Changepassword from "./Changepassword/Changepassword";
 
 // lazy loading components go here
 const Profile = React.lazy(() => import("./Profile/Profile"));
@@ -62,6 +63,40 @@ const Index = () => {
                 </ErrorBoundary>
               }
             />
+            <Route
+              path="/change_password"
+              element={
+                <ErrorBoundary fallback={<PageLoadingFail />}>
+                  <Suspense
+                    fallback={
+                      <>
+                        <SkeletonTheme
+                          baseColor="#9298a8"
+                          highlightColor="#444"
+                        >
+                          <div className="row">
+                            <div className="col-4">
+                              <Skeleton count={5} />
+                            </div>
+                            <div className="col-8">
+                              <Skeleton count={5} />
+                            </div>
+                          </div>
+
+                          <div>
+                            <Skeleton count={50} />
+                          </div>
+                        </SkeletonTheme>
+                      </>
+                    }
+                  >
+                    <MetaTag MetaTagTitle="change_password" />
+                    <Changepassword></Changepassword>
+                  </Suspense>
+                </ErrorBoundary>
+              }
+            />
+            
             <Route path="/*" element={<Error404 />} />
           </Routes>
           <BottomNavBar />

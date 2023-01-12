@@ -1,0 +1,39 @@
+.NavBarOptions{
+    display: none;
+}
+.profile_dropdown_for_mobile{
+    display: none;
+}
+@media only screen and (max-width: 1200px) {
+
+    /*Tablets [601px -> 1200px]*/
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    /*Big smartphones [426px -> 600px]*/
+    .NavBarOptions {
+        display: block;
+    }
+    .profile_dropdown_for_pc{
+        display: none;
+    }
+    .profile_dropdown_for_mobile{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    /*Small smartphones [325px -> 425px]*/
+    .NavBarOptions {
+        display: block;
+    }
+    .profile_dropdown_for_pc{
+        display: none;
+    }
+    .profile_dropdown_for_mobile{
+        display: block;
+    }
+}

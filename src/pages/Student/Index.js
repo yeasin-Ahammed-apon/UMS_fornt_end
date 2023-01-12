@@ -6,7 +6,7 @@ import { ErrorBoundary } from "react-error-boundary";
 
 import SideBar from "../../Components/SideBar/SideBar";
 import PageLoadingFail from "../../Components/parts/PageLoadingFail";
-import Navigationbar from "../../Components/parts/Navigationbar";
+import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 import MetaTag from "../../Components/parts/MetaTag";
 import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
@@ -22,7 +22,7 @@ const Index = () => {
   let HideSideBar = () => setSideBarToggle(!SideBarToggle);
   return (
     <div className="page-container">
-      <Navigationbar />
+      <NavigationBar />
       <div className="d-flex justify-content">
         <SideBar SideBarToggle={SideBarToggle} className="sidebar" />
         <div className="w-100 pages">

@@ -1,29 +1,10 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import React from 'react';
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useProSidebar } from "react-pro-sidebar";
 
-const Navigationbar = () => {
-  const { collapseSidebar } = useProSidebar();
-  return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link
-              className="SideBarCollapseButton"
-              onClick={() => collapseSidebar()}
-            >
-              <i className="bi bi-list fs-5"></i>
-            </Nav.Link>
-            {/* <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link> */}
-          </Nav>
-          <NavDropdown
+const ProfileDropDown = ({ProfileDropDownClassName}) => {
+    return (
+        <div>
+            <NavDropdown className={ProfileDropDownClassName}
             title={
               <div className="pull-left">
                 <img
@@ -52,10 +33,8 @@ const Navigationbar = () => {
               Separated link
             </NavDropdown.Item>
           </NavDropdown>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
+        </div>
+    );
 };
 
-export default Navigationbar;
+export default ProfileDropDown;

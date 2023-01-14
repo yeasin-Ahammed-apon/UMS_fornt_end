@@ -2,7 +2,7 @@ import React from "react";
 import "./ChangePassword.css";
 const ChangePassword = () => {
   return (
-    <div className="mainDiv">
+    <div className="mainDiv rounded-pill">
       <div class="cardStyle">
         <form action="" method="post" name="signupForm" id="signupForm">
           <img
@@ -46,9 +46,9 @@ const ChangePassword = () => {
           </div>
 
           <div className="buttonWrapper mybutton margin-left pt-3">
-          <button type="button" className="btn btn-primary ms-4">Home</button>
-          <button type="button" className="btn btn-danger">Logout</button>
-          <button type="button" class="btn btn-success me-4 w-51">Change Password</button>
+          <button type="submit" className="btn btn-primary ms-4">Home</button>
+          <button type="submit" className="btn btn-danger">Logout</button>
+          <button type="submit" class="btn btn-success me-4 w-51">Change Password</button>
           </div>
         </form>
       </div>

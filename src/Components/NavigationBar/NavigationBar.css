@@ -1,6 +1,9 @@
 .NavBarOptions{
     display: none;
 }
+.profile_dropdown_for_pc{
+    padding-right: 80px;
+}
 .profile_dropdown_for_mobile{
     display: none;
 }

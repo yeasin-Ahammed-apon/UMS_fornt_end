@@ -46,9 +46,15 @@ const ChangePassword = () => {
           </div>
 
           <div className="buttonWrapper mybutton margin-left pt-3">
-          <button type="submit" className="btn btn-primary ms-5">Home</button>
-          <button type="submit" className="btn btn-danger">Logout</button>
-          <button type="submit" class="btn btn-success me-5 w-51">Change Password</button>
+            <button type="submit" className="btn btn-primary ms-5">
+              Home
+            </button>
+            <button type="submit" className="btn btn-danger">
+              Logout
+            </button>
+            <button type="submit" class="btn btn-success me-5 w-51">
+              Change Password
+            </button>
           </div>
         </form>
       </div>

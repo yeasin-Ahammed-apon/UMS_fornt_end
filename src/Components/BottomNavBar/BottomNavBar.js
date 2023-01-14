@@ -1,42 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "./BottomNavBar.css";
-
+import { tab } from "../../Data/UiData";
 const BottomNavBar = () => {
-  const tabs = [
-    {
-      route: "?student/payments",
-      icon: "bi bi-credit-card",
-      label: "Payments",
-    },
-    {
-      route: "/student/admit",
-      icon: "bi bi-file-pdf",
-      label: "Admit_Card",
-    },
-    {
-      route: "/student/",
-      icon: "bi bi-house",
-      label: "Home",
-    },
-    {
-      route: "/search/result/",
-      icon: "bi bi-file-earmark-spreadsheet",
-      label: "Result",
-    },
-    {
-      route: "/student/profile",
-      icon: "bi bi-person-circle",
-      label: "Profile",
-    },
-  ];
+  const [tabs,SetTabs] =  useState(tab);
+  
   return (
     <div className="BottomNavBar">
       <nav
-        className="navbar fixed-bottom"
-        role="navigation"
-        style={{ backgroundColor: "black" }}
+        className="navbar fixed-bottom bottom_nav_bar"
+        role="navigation"        
       >
         <Nav className="w-100">
           <div className=" d-flex flex-row justify-content-around w-100">
@@ -47,7 +21,7 @@ const BottomNavBar = () => {
                   className="nav-link"
                   activeClassName="active"
                 >
-                  <div className="row d-flex flex-column justify-content-center align-items-center">
+                  <div className="row d-flex flex-column align-self-center justify-content-center align-items-center bottom_nav_bar_front_and_icon">
                     <i
                       className={tab.icon}
                       style={{ fontSize: "1.4em", textAlign: "center" }}

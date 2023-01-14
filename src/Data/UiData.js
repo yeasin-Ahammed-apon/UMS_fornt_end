@@ -117,3 +117,31 @@ export let DashboardCardsData = [
       icon: "bi bi-currency-dollar",
     },
   ];
+
+export const tab = [
+    {
+      route: "?student/payments",
+      icon: "bi bi-credit-card",
+      label: "Payments",
+    },
+    {
+      route: "/student/admit",
+      icon: "bi bi-file-pdf",
+      label: "Admit_Card",
+    },
+    {
+      route: "/student/",
+      icon: "bi bi-house",
+      label: "Home",
+    },
+    {
+      route: "/search/result/",
+      icon: "bi bi-file-earmark-spreadsheet",
+      label: "Result",
+    },
+    {
+      route: "/student/profile",
+      icon: "bi bi-person-circle",
+      label: "Profile",
+    },
+  ];

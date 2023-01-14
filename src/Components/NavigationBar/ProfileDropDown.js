@@ -1,10 +1,11 @@
 import React from 'react';
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from 'react-router-dom';
 
 const ProfileDropDown = ({ProfileDropDownClassName}) => {
     return (
-        <div>
-            <NavDropdown className={ProfileDropDownClassName}
+        
+            <NavDropdown className={ProfileDropDownClassName +" flex-shrink-1"}
             title={
               <div className="pull-left">
                 <img
@@ -23,17 +24,12 @@ const ProfileDropDown = ({ProfileDropDownClassName}) => {
             }
             id="basic-nav-dropdown"
           >
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <Link className='dropdown-item' to='/student/profile'>Profile</Link>            
+            <Link className='dropdown-item' to='/student/settings'>Settings</Link>            
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </div>
+            <Link className='dropdown-item' to='/student/logout'>Logout</Link>            
+            
+          </NavDropdown>        
     );
 };
 

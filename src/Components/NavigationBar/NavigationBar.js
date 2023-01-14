@@ -14,12 +14,19 @@ const NavigationBar = () => {
   const [NavigationBarData, SetNavigationBarData] = useState(SideBarData);
   const { collapseSidebar } = useProSidebar();
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <ProfileDropDown ProfileDropDownClassName="profile_dropdown_for_mobile" />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">      
+        
+        <img 
+        src="/smuct.png"
+         className="img-fluid ps-2"
+          alt="SMUCT"
+          style={{ width:"100px" }}
+          />
+        
+        <Navbar.Toggle className="me-auto" aria-controls="basic-navbar-nav" />
+        <ProfileDropDown className="me-auto" ProfileDropDownClassName="profile_dropdown_for_mobile" />
+        
+        <Navbar.Collapse id="basic-navbar-nav">        
           <Nav className="me-auto">
             <Nav.Link
               className="SideBarCollapseButton"
@@ -34,14 +41,18 @@ const NavigationBar = () => {
                     className="NavBarOptions"
                     id="nav-dropdown-dark-example"
                     key={options.name}
-                    title={options.name}
+                    title={" "+options.name}
                     menuVariant="dark"
+                    style={{ paddingLeft:"10px" }}
                   >
                     {options.subMenu.map((option) => (
-                      <li className="nav-item" key={option.name}>
+                      <li className="nav-item" 
+                      key={option.name}
+                      style={{ paddingLeft:"10px" }}
+                      >
                         <NavLink className="nav-link" to={option.url}>
                           <i className={option.icon}></i>
-                          {option.name}
+                          {" "+option.name}
                         </NavLink>
                       </li>
                       // </>
@@ -51,19 +62,20 @@ const NavigationBar = () => {
               if (!options.hasOwnProperty("subMenu"))
                 return (
                   <>
-                    <li className="nav-item NavBarOptions" key={options.name}>
+                    <li className="nav-item NavBarOptions" key={options.name}
+                    style={{ paddingLeft:"10px" }}
+                    >
                       <NavLink className="nav-link" to={options.url}>
-                        <i className={options.icon}></i>
-                        {options.name}
+                        <i className={options.icon}></i>  {" "+options.name}
                       </NavLink>
                     </li>
                   </>
                 );
             })}
-          </Nav>
-          <ProfileDropDown ProfileDropDownClassName="profile_dropdown_for_pc" />
+          </Nav>          
+          <ProfileDropDown className="ms-auto" ProfileDropDownClassName="profile_dropdown_for_pc"/>
         </Navbar.Collapse>
-      </Container>
+      
     </Navbar>
   );
 };

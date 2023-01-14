@@ -1,3 +1,19 @@
+.bottom_nav_bar{
+    border-top: .5px solid rgb(199, 196, 196);
+    background-color: white;
+    color: black !important;
+}
+.bottom_nav_bar_front_and_icon{
+    color: black;    
+}
+.bottom_nav_bar_front_and_icon:hover{
+    color: blue;
+}
+.BottombarLable{
+font-weight:700;
+}
+
+
 .BottomNavBar {
     display: none;
 }

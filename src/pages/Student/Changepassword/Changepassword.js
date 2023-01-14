@@ -2,7 +2,7 @@ import React from "react";
 import "./ChangePassword.css";
 const ChangePassword = () => {
   return (
-    <div className="mainDiv rounded-pill">
+    <div className="mainDiv">
       <div class="cardStyle">
         <form action="" method="post" name="signupForm" id="signupForm">
           <img

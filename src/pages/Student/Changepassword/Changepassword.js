@@ -45,28 +45,10 @@ const ChangePassword = () => {
             />
           </div>
 
-          <div className="buttonWrapper">
-            <button
-              type="submit"
-              id="submitButton"
-              className="submitButton pure-button pure-button-primary"
-            >
-              <span>Home</span>
-            </button>
-            <button
-              type="submit"
-              id="Logout"
-              className="submitButton pure-button pure-button-primary mt-2"
-            >
-              <span>Logout</span>
-            </button>
-            <button
-              type="Cpass"
-              id="Cpass"
-              className="submitButton pure-button pure-button-primary mt-2"
-            >
-              <span>Change Password</span>
-            </button>
+          <div className="buttonWrapper mybutton margin-left pt-3">
+          <button type="button" className="btn btn-primary ms-4">Home</button>
+          <button type="button" className="btn btn-danger">Logout</button>
+          <button type="button" class="btn btn-success me-4 w-51">Change Password</button>
           </div>
         </form>
       </div>

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { DashboardCardsData } from "../../Data/UiData";
 import "./DashboardCards.css";
-const DashboardCards = () => {
+const DashboardCards = ({DashboardData}) => {
   
-  let [CardData, SetCardData] = useState(DashboardCardsData);
+  let [CardData, SetCardData] = useState(DashboardData);
   return (
     <div className="dashboard_cards">
       <div className="row_for_parent">

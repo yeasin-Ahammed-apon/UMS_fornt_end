@@ -11,6 +11,7 @@ import Error404 from "./Components/Error404/Error404";
 import Login from "./pages/Login/Login";
 // lazy loading components go here
 const Student = React.lazy(() => import("./pages/Student/Index"));
+const Admin = React.lazy(() => import("./pages/Admin/Index"));
 
 function App() {
   
@@ -32,6 +33,15 @@ function App() {
             <>
               <MetaTag MetaTagTitle="Home" />
               <Student />
+            </>
+          }
+        />  
+        <Route
+          path="/admin/*"
+          element={
+            <>
+              <MetaTag MetaTagTitle="Home" />
+              <Admin />
             </>
           }
         />        

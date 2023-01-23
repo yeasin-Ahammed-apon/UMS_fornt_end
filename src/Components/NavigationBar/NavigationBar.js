@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 import { useProSidebar } from "react-pro-sidebar";
 import { NavLink } from "react-router-dom";
-import { SideBarData } from "../../Data/UiData";
 import "./NavigationBar.css";
 import ProfileDropDown from "./ProfileDropDown";
 
-const NavigationBar = () => {
-  const [NavigationBarData, SetNavigationBarData] = useState(SideBarData);
+const NavigationBar = ({SideBardata}) => {
+  const [NavigationBarData, SetNavigationBarData] = useState(SideBardata);
   const { collapseSidebar } = useProSidebar();
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">      

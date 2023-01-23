@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "./BottomNavBar.css";
-import { tab } from "../../Data/UiData";
-const BottomNavBar = () => {
-  const [tabs,SetTabs] =  useState(tab);
+const BottomNavBar = ({BottomNavBarData}) => {
+  const [tabs,SetTabs] =  useState(BottomNavBarData);
   
   return (
     <div className="BottomNavBar">

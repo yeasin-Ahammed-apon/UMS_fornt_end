@@ -14,6 +14,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
 import ChangePassword from "./ChangePassword/ChangePassword";
 import AdmitCardsDownloads from "./AdmitCardDownloads/AdmitCardsDownloads";
+import { BottomNavBarDataForStudent, SideBarDataForStudent } from "../../Data/UiData";
 // lazy loading components go here
 const Profile = React.lazy(() => import("./Profile/Profile"));
 
@@ -22,9 +23,9 @@ const Index = () => {
   let HideSideBar = () => setSideBarToggle(!SideBarToggle);
   return (
     <div className="page-container">
-      <NavigationBar />
+      <NavigationBar SideBardata={SideBarDataForStudent} />
       <div className="d-flex justify-content">
-        <SideBar SideBarToggle={SideBarToggle} className="sidebar" />
+      <SideBar SideBarToggle={SideBarToggle} SideBardata={SideBarDataForStudent} className="sidebar" />
         <div className="w-100 pages">
           <Minibar HideSideBar={HideSideBar} />
           <Routes>
@@ -94,8 +95,7 @@ const Index = () => {
                     <ChangePassword></ChangePassword>
                   </Suspense>
                 </ErrorBoundary>
-              }
-              
+              }              
             />
               <Route
               path="/admit_card_download"
@@ -134,7 +134,7 @@ const Index = () => {
             
             <Route path="/*" element={<Error404 />} />
           </Routes>
-          <BottomNavBar />
+          <BottomNavBar  BottomNavBarData={BottomNavBarDataForStudent}/>
         </div>
       </div>
     </div>

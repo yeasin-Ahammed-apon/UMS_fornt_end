@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import "./SideBar.css";
-import { SideBarData } from "../../Data/UiData";
-const SideBar = ({SideBarToggle}) => {
-  let [sideBarOption, setSideBarOption] = useState(SideBarData);
+const SideBar = ({SideBarToggle,SideBardata}) => {
+  let [sideBarOption, setSideBarOption] = useState(SideBardata);
   return (
    <div className="SideBar">
      <Sidebar

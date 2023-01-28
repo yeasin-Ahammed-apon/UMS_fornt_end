@@ -1,53 +1,56 @@
 import "./App.css";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-
-// import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-// import { ErrorBoundary } from "react-error-boundary";
+import React, {useState } from "react";
+import { Navigate, Route, Routes  } from "react-router-dom";
 
 import MetaTag from "./Components/parts/MetaTag";
 import Error404 from "./Components/Error404/Error404";
+import TopLoadingBar from "./Components/TopLoadingBar/TopLoadingBar";
 
+// avoiding lazy loding for this pages
 import Login from "./pages/Login/Login";
-// lazy loading components go here
-const Student = React.lazy(() => import("./pages/Student/Index"));
-const Admin = React.lazy(() => import("./pages/Admin/Index"));
+import Student from "./pages/Student/Index";
+import Admin from "./pages/Admin/Index";
 
+export const Topbarloaderdata = React.createContext();
 function App() {
-  
+  const [topBarData, setTopBarData] = useState(100);  
   return (
-    <div className="page-container">
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            <>
-              <MetaTag MetaTagTitle="Login" />
-              <Login />
-            </>
-          }
-        />
-        <Route
-          path="/student/*"
-          element={
-            <>
-              <MetaTag MetaTagTitle="Home" />
-              <Student />
-            </>
-          }
-        />  
-        <Route
-          path="/admin/*"
-          element={
-            <>
-              <MetaTag MetaTagTitle="Home" />
-              <Admin />
-            </>
-          }
-        />        
-        <Route path="/*" element={<Error404 />} />
-      </Routes>
-    </div>
+    <Topbarloaderdata.Provider value={setTopBarData}>
+      <div className="page-container">
+        <TopLoadingBar progresBarData={topBarData} />
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <>
+                <MetaTag MetaTagTitle="Login" />
+                <Login />
+              </>
+            }
+          />
+          <Route
+            path="/student/*"
+            element={
+              <>
+                <MetaTag MetaTagTitle="Home" />
+                <Student />
+              </>
+            }
+          />
+          <Route
+            path="/admin/*"
+            element={
+              <>
+                <MetaTag MetaTagTitle="Home" />
+                <Admin />
+              </>
+            }
+          />
+          <Route path="/" element={<Navigate to='/login' />} />{/*remove after use  */}
+          <Route path="/*" element={<Error404 />} />
+        </Routes>
+      </div>
+    </Topbarloaderdata.Provider>
   );
 }
 

@@ -3,7 +3,7 @@ import DashboardCards from '../../../Components/DashboardCards/DashboardCards';
 import { DashboardCardsDataStudent } from '../../../Data/UiData';
 
 
-const Dashboard = () => {
+const Dashboard = () => {    
     return (
         <div className='bg-light rounded'>
             <DashboardCards DashboardData={DashboardCardsDataStudent}/>

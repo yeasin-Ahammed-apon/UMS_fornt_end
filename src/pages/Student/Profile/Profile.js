@@ -4,14 +4,9 @@ import Tabs from "react-bootstrap/Tabs";
 import Table from 'react-bootstrap/Table';
 import "./Profile.css";
 
-const Profile = (props) => {
-  // const Child = () => { // error making 
-  //   throw new Error()
-  // }
-  return (
-  // <> // error making
-  // <Child/>
-  // </>
+
+const Profile = () => {          
+  return (  
     <div>            
       <div className="shadow">
         {/* profile basic info */}
@@ -71,7 +66,7 @@ const Profile = (props) => {
       <div className="div1 p-3">
       <b>Personal Information</b>
       <hr></hr>
-      <table class="table table-hover">
+      <table className="table table-hover">
   <thead>
   <tr>
       <th scope="col">Full Name:<i className="font-weight"> Shams Al Fahad </i></th>
@@ -111,7 +106,7 @@ const Profile = (props) => {
       <div className="div2 p-3">
       <b className="ml-3">Parents Information</b>
       <hr></hr>
-      <table class="table table-hover">
+      <table className="table table-hover">
   <thead>
     <tr>
       <th scope="col">Father's Name: <i className="font-weight"> M. A. Faruque </i></th>

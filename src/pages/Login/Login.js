@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
+import { HelperForSetTopbardata } from "../../Helpers/TopBarDataLoadingFun";
 
 
 
-const Login = () => {
+
+const Login = () => {  
+  HelperForSetTopbardata(100);  
   const Navigate = useNavigate();
   const [UserEmail,setUserEmail] =  useState("")
   const [UserPassword,setUserPassword] =  useState("")
@@ -16,20 +19,22 @@ const Login = () => {
     event.preventDefault();
     const {userEmail,userPassword} = event.target;
      setUserEmail(userEmail.value)
-     setUserPassword(userPassword.value)          
+     setUserPassword(userPassword.value)      
      async function checkForUser(email,password,remember){
       await axios.post(`${url}/login`, {
         email,
         password,
         remember,
       })
-      .then(function (res) {
-        if (res.data.status === 200) {
+      .then(function (res) {        
+        if (res.data.status === 200) {          
           Navigate('/admin')
+        }
+        else{          
         }
       })
      }
-     checkForUser(UserEmail,UserPassword,UserRemember);
+     checkForUser(UserEmail,UserPassword,UserRemember);     
   }
   return (
     <div className=" row justify-content-center p-4 p-sm-1 ">      
@@ -55,8 +60,8 @@ const Login = () => {
             onChange={() => setUserRemember(!UserRemember)}
              />
           </Form.Group>
-          <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="submit">
+          <div className="d-grid gap-2">
+            <button className="btn btn-primary" type="submit">
               Login
             </button>
           </div>

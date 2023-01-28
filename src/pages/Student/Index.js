@@ -18,7 +18,7 @@ import { BottomNavBarDataForStudent, SideBarDataForStudent } from "../../Data/Ui
 // lazy loading components go here
 const Profile = React.lazy(() => import("./Profile/Profile"));
 
-const Index = () => {
+const Index = () => {  
   const [SideBarToggle, setSideBarToggle] = useState(true);
   let HideSideBar = () => setSideBarToggle(!SideBarToggle);
   return (

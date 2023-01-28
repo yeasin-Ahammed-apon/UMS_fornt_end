@@ -5,7 +5,7 @@ const AdmitCardsDownloads = () => {
     return (
         <div className='bg-light pb-3 background'>
     <div>
-        <h4 className='pt-2'><i class="bi bi-text-indent-left"></i>Online Admit Card Download / Print</h4>
+        <h4 className='pt-2'><i className="bi bi-text-indent-left"></i>Online Admit Card Download / Print</h4>
     </div>
     <hr></hr>
             <div className="wrapper ">

@@ -3,7 +3,7 @@ import "./ChangePassword.css";
 const ChangePassword = () => {
   return (
     <div className="mainDiv">
-      <div class="cardStyle">
+      <div className="cardStyle">
         <form action="" method="post" name="signupForm" id="signupForm">
           <img
             src="https://smuct.ac.bd/wp-content/uploads/2020/10/SMUCT-Logo-1-Converted.png"
@@ -27,7 +27,7 @@ const ChangePassword = () => {
 
           <h2 className="formTitle">Change Password Form</h2>
 
-          <div class="inputDiv">
+          <div className="inputDiv">
             <label className="inputLabel" for="password">
               New Password
             </label>
@@ -52,7 +52,7 @@ const ChangePassword = () => {
             <button type="submit" className="btn btn-danger">
               Logout
             </button>
-            <button type="submit" class="btn btn-success me-5 w-51">
+            <button type="submit" className="btn btn-success me-5 w-51">
               Change Password
             </button>
           </div>

@@ -1,5 +1,5 @@
 import "./Index.css";
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState} from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { ErrorBoundary } from "react-error-boundary";
@@ -16,15 +16,21 @@ import { BottomNavBarDataForAdmin, SideBarDataForAdmin } from "../../Data/UiData
 
 
 
+
+
+
 // lazy loading components go here
 
 
 const Index = () => {
+
   const [SideBarToggle, setSideBarToggle] = useState(true);
-  let HideSideBar = () => setSideBarToggle(!SideBarToggle);
+  let HideSideBar = () => setSideBarToggle(!SideBarToggle);    
+  
+  
   return (
     <div className="page-container">
-      <NavigationBar SideBardata={SideBarDataForAdmin} />
+      <NavigationBar SideBardata={SideBarDataForAdmin} />      
       <div className="d-flex justify-content">
         <SideBar SideBarToggle={SideBarToggle} SideBardata={SideBarDataForAdmin} className="sidebar" />
         <div className="w-100 pages">
@@ -57,7 +63,7 @@ const Index = () => {
                         </SkeletonTheme>
                       </>
                     }
-                  >
+                  >                    
                     <MetaTag MetaTagTitle="Home" />
                     <Dashboard/>
                   </Suspense>

@@ -13,6 +13,7 @@ import Minibar from "../../Components/MiniBar/Minibar";
 import Dashboard from "./Dashboard/Dashboard";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
 import { BottomNavBarDataForAdmin, SideBarDataForAdmin } from "../../Data/UiData";
+import Tabel from "../../Components/Tabel/Tabel";
 
 
 
@@ -72,6 +73,7 @@ const Index = () => {
             />             
             <Route path="/*" element={<Error404 />} />
           </Routes>
+          <Tabel/>
           <BottomNavBar  BottomNavBarData={BottomNavBarDataForAdmin}/>
         </div>
       </div>

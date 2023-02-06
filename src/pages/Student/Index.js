@@ -1,22 +1,19 @@
 import "./Index.css";
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { ErrorBoundary } from "react-error-boundary";
 
 import SideBar from "../../Components/SideBar/SideBar";
-import PageLoadingFail from "../../Components/parts/PageLoadingFail";
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
-import MetaTag from "../../Components/parts/MetaTag";
 import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
-import Dashboard from "./Dashboard/Dashboard";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
-import ChangePassword from "./ChangePassword/ChangePassword";
-import AdmitCardsDownloads from "./AdmitCardDownloads/AdmitCardsDownloads";
+import ErrorBoundaryCheck from "../../Components/ErrorBoundaryCheck/ErrorBoundaryCheck";
 import { BottomNavBarDataForStudent, SideBarDataForStudent } from "../../Data/UiData";
 // lazy loading components go here
+const Dashboard = React.lazy(() => import("./Dashboard/Dashboard"));
 const Profile = React.lazy(() => import("./Profile/Profile"));
+const ChangePassword = React.lazy(() => import("./ChangePassword/ChangePassword"));
+const AdmitCardsDownloads = React.lazy(() => import("./AdmitCardDownloads/AdmitCardsDownloads"));
 
 const Index = () => {  
   const [SideBarToggle, setSideBarToggle] = useState(true);
@@ -29,108 +26,29 @@ const Index = () => {
         <div className="w-100 pages">
           <Minibar HideSideBar={HideSideBar} />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Navigate to="/student" />} />
+            <Route path="/" element={
+                <ErrorBoundaryCheck Page={<Dashboard />} MetaTitle="Home"/>
+              } />
             <Route
               path="/profile"
               element={
-                <ErrorBoundary fallback={<PageLoadingFail />}>
-                  <Suspense
-                    fallback={
-                      <>
-                        <SkeletonTheme
-                          baseColor="#9298a8"
-                          highlightColor="#444"
-                        >
-                          <div className="row">
-                            <div className="col-4">
-                              <Skeleton count={5} />
-                            </div>
-                            <div className="col-8">
-                              <Skeleton count={5} />
-                            </div>
-                          </div>
-
-                          <div>
-                            <Skeleton count={50} />
-                          </div>
-                        </SkeletonTheme>
-                      </>
-                    }
-                  >
-                    <MetaTag MetaTagTitle="Profile" />
-                    <Profile />
-                  </Suspense>
-                </ErrorBoundary>
+                <ErrorBoundaryCheck Page={<Profile />} MetaTitle="Profile"/>
               }
             />
             <Route
               path="/change_password"
               element={
-                <ErrorBoundary fallback={<PageLoadingFail />}>
-                  <Suspense
-                    fallback={
-                      <>
-                        <SkeletonTheme
-                          baseColor="#9298a8"
-                          highlightColor="#444"
-                        >
-                          <div className="row">
-                            <div className="col-4">
-                              <Skeleton count={5} />
-                            </div>
-                            <div className="col-8">
-                              <Skeleton count={5} />
-                            </div>
-                          </div>
-
-                          <div>
-                            <Skeleton count={50} />
-                          </div>
-                        </SkeletonTheme>
-                      </>
-                    }
-                  >
-                    <MetaTag MetaTagTitle="change_password" />
-                    <ChangePassword></ChangePassword>
-                  </Suspense>
-                </ErrorBoundary>
+                <ErrorBoundaryCheck Page={<ChangePassword/>} MetaTitle="Change Password"/>
               }              
             />
               <Route
               path="/admit_card_download"
               element={
-                <ErrorBoundary fallback={<PageLoadingFail />}>
-                  <Suspense
-                    fallback={
-                      <>
-                        <SkeletonTheme
-                          baseColor="#9298a8"
-                          highlightColor="#444"
-                        >
-                          <div className="row">
-                            <div className="col-4">
-                              <Skeleton count={5} />
-                            </div>
-                            <div className="col-8">
-                              <Skeleton count={5} />
-                            </div>
-                          </div>
-
-                          <div>
-                            <Skeleton count={50} />
-                          </div>
-                        </SkeletonTheme>
-                      </>
-                    }
-                  >
-                    <MetaTag MetaTagTitle="admit_card_download" />
-                    <AdmitCardsDownloads></AdmitCardsDownloads>
-                  </Suspense>
-                </ErrorBoundary>
+                <ErrorBoundaryCheck Page={<AdmitCardsDownloads />} MetaTitle="Admit Cards Downloads" />
               }
               
-            />
+            /> 
             
             <Route path="/*" element={<Error404 />} />
           </Routes>

@@ -27,11 +27,15 @@ const Login = () => {
         remember,
       })
       .then(function (res) {        
-        if (res.data.status === 200) {          
+        if (res.data.status !== 200) {          
           Navigate('/admin')
         }
         else{          
+          console.log('not 200');
+          
         }
+      }).catch(error=>{
+        Navigate('/admin')// for now we are using this .in devlopment mode it will be off
       })
      }
      checkForUser(UserEmail,UserPassword,UserRemember);     

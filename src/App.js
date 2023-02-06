@@ -2,7 +2,6 @@ import "./App.css";
 import React, {useState } from "react";
 import { Navigate, Route, Routes  } from "react-router-dom";
 
-import MetaTag from "./Components/parts/MetaTag";
 import Error404 from "./Components/Error404/Error404";
 import TopLoadingBar from "./Components/TopLoadingBar/TopLoadingBar";
 
@@ -10,6 +9,7 @@ import TopLoadingBar from "./Components/TopLoadingBar/TopLoadingBar";
 import Login from "./pages/Login/Login";
 import Student from "./pages/Student/Index";
 import Admin from "./pages/Admin/Index";
+import MetaTag from "./Components/MetaTag/MetaTag";
 
 export const Topbarloaderdata = React.createContext();
 function App() {

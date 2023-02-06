@@ -87,6 +87,11 @@ export let SideBarDataForAdmin = [
     icon: "bi bi-book",
     subMenu: [
       {
+        name: "All Member",
+        url: "/admin/all_member",
+        icon: "bi bi-send",
+      },
+      {
         name: "Hod",
         url: "/admin/Hod",
         icon: "bi bi-send",

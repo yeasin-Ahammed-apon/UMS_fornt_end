@@ -1,4 +1,3 @@
-import "./Index.css";
 import React, { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
@@ -9,6 +8,7 @@ import Minibar from "../../Components/MiniBar/Minibar";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
 import {BottomNavBarDataForAdmin,SideBarDataForAdmin} from "../../Data/UiData";
 import ErrorBoundaryCheck from "../../Components/ErrorBoundaryCheck/ErrorBoundaryCheck";
+import "./Index.css";
 
 
 const Dashboard = React.lazy(() => import("./Dashboard/Dashboard"));

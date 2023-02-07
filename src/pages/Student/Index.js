@@ -46,10 +46,8 @@ const Index = () => {
               path="/admit_card_download"
               element={
                 <ErrorBoundaryCheck Page={<AdmitCardsDownloads />} MetaTitle="Admit Cards Downloads" />
-              }
-              
-            /> 
-            
+              }              
+            />             
             <Route path="/*" element={<Error404 />} />
           </Routes>
           <BottomNavBar  BottomNavBarData={BottomNavBarDataForStudent}/>

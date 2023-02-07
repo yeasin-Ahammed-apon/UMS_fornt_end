@@ -11,7 +11,7 @@ const Minibar = ({ HideSideBar }) => {
     <div className="p-1 second_list w-100 pages mb-1 shadow bg-light d-flex justify-content">
       {/*  here we will use our full srcreen functionality */}
       <div className="flex-fill align-self-center">
-        <h4>Good morning student</h4>
+        <h4 className="greetings">Good morning student</h4>
       </div>
       <div>
         <ListGroup horizontal className="second_list">

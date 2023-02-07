@@ -8,10 +8,11 @@ import Error404 from "../../Components/Error404/Error404";
 import Minibar from "../../Components/MiniBar/Minibar";
 import BottomNavBar from "../../Components/BottomNavBar/BottomNavBar";
 import {BottomNavBarDataForAdmin,SideBarDataForAdmin} from "../../Data/UiData";
-import Tabel from "../../Components/Tabel/Tabel";
 import ErrorBoundaryCheck from "../../Components/ErrorBoundaryCheck/ErrorBoundaryCheck";
 
+
 const Dashboard = React.lazy(() => import("./Dashboard/Dashboard"));
+const AllMember = React.lazy(() => import("./AllMember/AllMember"));
 
 // lazy loading components go here
 
@@ -21,6 +22,7 @@ const Index = () => {
 
   return (
     <div className="page-container">
+      
       <NavigationBar SideBardata={SideBarDataForAdmin} />
       <div className="d-flex justify-content">
         <SideBar
@@ -38,12 +40,18 @@ const Index = () => {
                 <ErrorBoundaryCheck Page={<Dashboard/>} MetaTitle="Home"/>
               }
             />
+            <Route
+              path="/all_member"
+              element={                
+                <ErrorBoundaryCheck Page={<AllMember/>} MetaTitle="All Member"/>
+              }
+            />
             <Route path="/*" element={<Error404 />} />
-          </Routes>
-          <Tabel />
+          </Routes>          
           <BottomNavBar BottomNavBarData={BottomNavBarDataForAdmin} />
         </div>
       </div>
+      
     </div>
   );
 };

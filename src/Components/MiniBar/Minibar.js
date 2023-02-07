@@ -1,7 +1,7 @@
-import "./Minibar.css";
 import React, { useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { reload, FullScreenToggler } from "../../Helpers/AllOverUsingFunctions";
+import "./Minibar.css";
 
 const Minibar = ({ HideSideBar }) => {
   const [FullScreenToggle, setFullScreenToggle] = useState(true);

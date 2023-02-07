@@ -9,6 +9,7 @@ const SideBar = ({SideBarToggle,SideBardata}) => {
      <Sidebar
      style={{
        height: "100vh" ,
+       paddingBottom:"100px",
        display: SideBarToggle ?'block':'none',       
        }} >
       <Menu>
@@ -16,16 +17,18 @@ const SideBar = ({SideBarToggle,SideBardata}) => {
           {sideBarOption.map((options) => {
             if (options.hasOwnProperty("subMenu"))
               return (
-                <SubMenu className="border" icon={<i className={options.icon}></i>} key={options.name} label={options.name}>
+                <SubMenu className="border" title={options.name} icon={<i className={options.icon}></i>} key={options.name} label={options.name}>
                   {options.subMenu.map((option) => (
-                    <MenuItem className="border" icon={<i className={option.icon}></i>} key={option.name}> {option.name}</MenuItem>
+                    <Link key={option.name} title={option.name} className="option_design" to={option.url}>                      
+                      <MenuItem className="border ps-4" icon={<i className={option.icon}></i>} key={option.name}> {option.name}</MenuItem>
+                    </Link>
                   ))}
                 </SubMenu>
               );
             if (!options.hasOwnProperty("subMenu"))
               return (
                 <Link key={options.name} className="option_design" to={options.url}>
-                  <MenuItem className="border" icon={<i className={options.icon}></i>}>{options.name}</MenuItem>
+                  <MenuItem className="border" title={options.name} icon={<i className={options.icon}></i>}>{options.name}</MenuItem>
                 </Link>
               );
           })}

@@ -48,7 +48,7 @@
 @media only screen and (max-width: 425px) {
 
   /*Small smartphones [325px -> 425px]*/
-  .second_list_fullscreen, .second_list_expand {
+  /* .second_list_fullscreen, .second_list_expand {
     display: none;
-  }
+  } */
 }

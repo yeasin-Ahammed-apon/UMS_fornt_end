@@ -59,7 +59,7 @@ const NavigationBar = ({SideBardata}) => {
                 );
               if (!options.hasOwnProperty("subMenu"))
                 return (
-                  <>
+                  <span key={options.name}>
                     <li className="nav-item NavBarOptions" key={options.name}
                     style={{ paddingLeft:"10px" }}
                     >
@@ -67,7 +67,7 @@ const NavigationBar = ({SideBardata}) => {
                         <i className={options.icon}></i>  {" "+options.name}
                       </NavLink>
                     </li>
-                  </>
+                  </span>
                 );
             })}
           </Nav>          

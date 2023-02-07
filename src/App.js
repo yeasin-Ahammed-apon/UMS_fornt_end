@@ -16,6 +16,7 @@ function App() {
   const [topBarData, setTopBarData] = useState(100);  
   return (
     <Topbarloaderdata.Provider value={setTopBarData}>
+      
       <div className="page-container">
         <TopLoadingBar progresBarData={topBarData} />
         <Routes>
@@ -50,6 +51,7 @@ function App() {
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </div>
+      
     </Topbarloaderdata.Provider>
   );
 }
